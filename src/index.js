@@ -3,15 +3,14 @@ const http = require("http"); // changes for websockets io
 const express = require("express");
 const socketio = require("socket.io");
 const Filter = require("bad-words");
-// const moment = require("moment");
+
 const {
   addUser,
   removeUser,
   getUser,
   getUsersInRoom
 } = require("../utils/users");
-// const hbs = reuire('hbs');
-// const mainRoutes = require("../routes/mainRoutes");
+
 // utils
 const { messageFormat, locationFormat } = require("../utils/messages");
 // variables
@@ -23,8 +22,7 @@ const io = socketio(server); // create webSockets support for server
 
 // assets folder html, css, js files
 app.use(express.static(path.join(__dirname, "../public")));
-// routes
-// app.use(mainRoutes);
+
 // Express will serve up index.html
 // if it doesn't recognize the route
 app.get("*", (req, res, next) => {
